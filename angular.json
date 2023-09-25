@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/todo-app",
-            "baseHref": "/todo-app/",
+            "baseHref": "/issahs-workspace/todo-app/",
             "index": "projects/todo-app/src/index.html",
             "main": "projects/todo-app/src/main.ts",
             "polyfills": [
@@ -105,7 +105,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/real-estate/",
+            "baseHref": "/issahs-workspace/real-estate/",
             "outputPath": "dist/real-estate",
             "index": "projects/real-estate/src/index.html",
             "main": "projects/real-estate/src/main.ts",
