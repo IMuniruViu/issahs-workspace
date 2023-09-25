@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Build real estate
-        run: npm run build real-estate  --base-href=/real-estate/  # Adjust this as needed
+        run: npm run build real-estate --base-href=/real-estate/  # Adjust this as needed
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
