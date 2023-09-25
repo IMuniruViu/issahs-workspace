@@ -32,4 +32,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/todo-app  # Specify the build output directory
           publish_branch: gh-pages
-          publish_dir_prefix: todo-app
