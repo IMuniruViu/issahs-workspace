@@ -1,0 +1,35 @@
+name: Deploy Todo App to GitHub Pages
+
+on:
+  push:
+    paths:
+      - 'projects/todo-app/**'  # Specify the path to the application folder
+    branches:
+      - main  # Change this to your default branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build todo-app
+        run: npm run build -- --prod --base-href=/todo-app/  # Adjust this as needed
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/todo-app  # Specify the build output directory
+          publish_branch: gh-pages
+          publish_dir_prefix: todo-app
